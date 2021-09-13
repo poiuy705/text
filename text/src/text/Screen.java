@@ -8,27 +8,24 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class Screen extends Canvas implements KeyListener{
-	private int x = 0;
-	private int y = 0;
+public class Screen extends Canvas implements KeyListener {
 	
-	private BufferedImage image;
+	Car [] car = new Car[2]; //클래스 배열 생성
+	
 	private static final long serialVersionUID = 1L;
 	
 	public Screen() {
-		try {
-			image = ImageIO.read(new File("src/car.png"));
-			
-			addKeyListener(this);
-		} catch (IOException e) {
-			e.printStackTrace();
+		addKeyListener(this);
+		for(int i = 0; i < 2; i++) {
+			car[i] = new Car(0, i*50); // 클래스 배열 초기화 및 위치 값 생성
 		}
 	}
 	@Override
 	public void paint(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paint(g);
-		g.drawImage(image, x, y, this);
+		g.drawImage(car[0].image, car[0].x, car[0].y, this); //1번 차 그리기
+		g.drawImage(car[1].image, car[1].x, car[1].y, this); //2번 차 그리기
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -47,21 +44,24 @@ public class Screen extends Canvas implements KeyListener{
 		switch(e.getKeyCode())
 		{
 		case KeyEvent.VK_UP:
-			y -= gap;
+			car[0].y -= gap;
+			car[1].y -= gap;
 			break;
 		case KeyEvent.VK_DOWN:
-			y += gap;
+			car[0].y += gap;
+			car[1].y += gap;
 			break;
 		case KeyEvent.VK_LEFT:
-			x -= gap;
+			car[0].x -= gap;
+			car[1].x -= gap;
 			break;
 		case KeyEvent.VK_RIGHT:
-			x += gap;
+			car[0].x += gap;
+			car[1].x += gap;
 			break;
 		}
-		System.out.println(x+", "+y);
+		
 		repaint();
 	}
-
 
 }
