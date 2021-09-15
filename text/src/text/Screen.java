@@ -8,7 +8,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class Screen extends Canvas implements KeyListener{
+public class Screen extends Canvas implements KeyListener {
+
 	private int x = 0;
 	private int y = 0;
 	
@@ -29,6 +30,7 @@ public class Screen extends Canvas implements KeyListener{
 		// TODO Auto-generated method stub
 		super.paint(g);
 		g.drawImage(image, x, y, this);
+		g.drawImage(image, x, y+50, this);
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -62,6 +64,5 @@ public class Screen extends Canvas implements KeyListener{
 		System.out.println(x+", "+y);
 		repaint();
 	}
-
 
 }

@@ -1,7 +1,8 @@
 package text;
 import javax.swing.JFrame;
 
-public class MainFrame extends JFrame{
+public class MainFrame extends JFrame {
+
 	/**
 	 * 
 	 */
@@ -14,8 +15,7 @@ public class MainFrame extends JFrame{
 		setVisible(true);
 		
 		add(new Screen());
-		
+	
 		validate();
 	}
-
 }
