@@ -29,9 +29,6 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
-import online.ClientBoard;
-import online.ClientGame;
 import main.SingleplayerBoard;
 
 

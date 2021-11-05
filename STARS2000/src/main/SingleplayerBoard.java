@@ -11,7 +11,6 @@ import mainGUI.LevelSpawner;
 import mainGUI.MainMenu;
 import mainGUI.PlayerData;
 import mainGUI.SystemData;
-import online.ClientGame;
 import birds.*;
 
 public class SingleplayerBoard extends JPanel implements ActionListener{
